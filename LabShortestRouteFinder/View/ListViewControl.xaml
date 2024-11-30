@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="LabShortestRouteFinder.View.ListViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             >
+    <Grid>
+        <DataGrid ItemsSource="{Binding Routes}" AutoGenerateColumns="False" Margin="10" IsReadOnly="False">
+            <DataGrid.Columns>
+                <!-- ComboBox for Start -->
+                <DataGridTemplateColumn Header="Start">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Start.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox 
+                            ItemsSource="{Binding DataContext.Cities, RelativeSource={RelativeSource AncestorType=Window}}" 
+                            SelectedItem="{Binding Start, Mode=TwoWay}" 
+                            DisplayMemberPath="Name" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- ComboBox for Destination -->
+                <DataGridTemplateColumn Header="Destination">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Destination.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox 
+                            ItemsSource="{Binding DataContext.Cities, RelativeSource={RelativeSource AncestorType=Window}}" 
+                            SelectedItem="{Binding Destination, Mode=TwoWay}" 
+                            DisplayMemberPath="Name" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Other Columns -->
+                <DataGridTextColumn Header="Driving distance" Binding="{Binding DrivingDistance, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Straight line distance" Binding="{Binding StraightLineDistance, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost, Mode=TwoWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</UserControl>
