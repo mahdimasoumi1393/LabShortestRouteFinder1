@@ -180,8 +180,22 @@ namespace LabShortestRouteFinder.ViewModel
                     Cities = this.Cities.Select(c => new { c.Name, c.X, c.Y, c.Latitude, c.Longitude }).ToList(),
                     Routes = this.Routes.Select(r => new
                     {
-                        StartName = r.Start.Name, // Unique property name for the start
-                        DestinationName = r.Destination.Name, // Unique property name for the destination
+                        Start = new
+                        {
+                            r.Start.Name,
+                            r.Start.X,
+                            r.Start.Y,
+                            r.Start.Latitude,
+                            r.Start.Longitude
+                        },
+                        Destination = new
+                        {
+                            r.Destination.Name,
+                            r.Destination.X,
+                            r.Destination.Y,
+                            r.Destination.Latitude,
+                            r.Destination.Longitude
+                        },
                         r.DrivingDistance,
                         r.StraightLineDistance,
                         r.Cost

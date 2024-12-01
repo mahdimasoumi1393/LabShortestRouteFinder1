@@ -11,19 +11,24 @@ namespace LabShortestRouteFinder.Model
 {
     public class Route
     {
-        [JsonPropertyName("Start")]
+        //[JsonPropertyName("Start")]
+        //public string StartName { get; set; } = string.Empty;
+
+        //[JsonPropertyName("Destination")]
+        //public string DestinationName { get; set; } = string.Empty;
+        //[JsonPropertyName("Start")]
         public required CityNode Start { get; set; }
 
-        [JsonPropertyName("Destination")]
+        //[JsonPropertyName("Destination")]
         public required CityNode Destination { get; set; }
 
-        [JsonPropertyName("DrivingDistance")]
+        //[JsonPropertyName("DrivingDistance")]
         public int DrivingDistance { get; set; }
 
-        [JsonPropertyName("StraightLineDistance")]
+        //[JsonPropertyName("StraightLineDistance")]
         public double StraightLineDistance { get; set; }
 
-        [JsonPropertyName("Cost")]
+        //[JsonPropertyName("Cost")]
         public int Cost { get; set; }  
     }
 }

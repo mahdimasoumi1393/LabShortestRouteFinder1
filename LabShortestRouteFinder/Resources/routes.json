@@ -192,43 +192,115 @@
   ],
   "Routes": [
     {
-      "StartName": "Stockholm",
-      "DestinationName": "Göteborg",
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 608,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Göteborg",
+        "X": 38,
+        "Y": 710,
+        "Latitude": 57.7089,
+        "Longitude": 11.9746
+      },
       "DrivingDistance": 474,
       "StraightLineDistance": 402.0,
       "Cost": 4740
     },
     {
-      "StartName": "Stockholm",
-      "DestinationName": "Malmö",
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 608,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Malmö",
+        "X": 77,
+        "Y": 842,
+        "Latitude": 55.605,
+        "Longitude": 13.0038
+      },
       "DrivingDistance": 617,
       "StraightLineDistance": 472.0,
       "Cost": 6170
     },
     {
-      "StartName": "Göteborg",
-      "DestinationName": "Malmö",
+      "Start": {
+        "Name": "Göteborg",
+        "X": 38,
+        "Y": 710,
+        "Latitude": 57.7089,
+        "Longitude": 11.9746
+      },
+      "Destination": {
+        "Name": "Malmö",
+        "X": 77,
+        "Y": 842,
+        "Latitude": 55.605,
+        "Longitude": 13.0038
+      },
       "DrivingDistance": 259,
       "StraightLineDistance": 211.0,
       "Cost": 2590
     },
     {
-      "StartName": "Umeå",
-      "DestinationName": "Borås",
+      "Start": {
+        "Name": "Umeå",
+        "X": 350,
+        "Y": 327,
+        "Latitude": 63.8258,
+        "Longitude": 20.263
+      },
+      "Destination": {
+        "Name": "Borås",
+        "X": 74,
+        "Y": 709,
+        "Latitude": 57.721,
+        "Longitude": 12.9401
+      },
       "DrivingDistance": 603,
       "StraightLineDistance": 488.11,
       "Cost": 6030
     },
     {
-      "StartName": "Stockholm",
-      "DestinationName": "Umeå",
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 608,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Umeå",
+        "X": 350,
+        "Y": 327,
+        "Latitude": 63.8258,
+        "Longitude": 20.263
+      },
       "DrivingDistance": 639,
-      "StraightLineDistance": 514.3,
+      "StraightLineDistance": 514.2,
       "Cost": 6390
     },
     {
-      "StartName": "Uppsala",
-      "DestinationName": "Norrköping",
+      "Start": {
+        "Name": "Uppsala",
+        "X": 251,
+        "Y": 576,
+        "Latitude": 59.8586,
+        "Longitude": 17.6389
+      },
+      "Destination": {
+        "Name": "Norrköping",
+        "X": 197,
+        "Y": 655,
+        "Latitude": 58.586,
+        "Longitude": 16.1924
+      },
       "DrivingDistance": 232,
       "StraightLineDistance": 163.45,
       "Cost": 2320
