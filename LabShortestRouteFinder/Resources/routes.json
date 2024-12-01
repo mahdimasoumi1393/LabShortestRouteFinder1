@@ -1,81 +1,237 @@
 {
+  "Cities": [
+    {
+      "Name": "Stockholm",
+      "X": 267,
+      "Y": 608,
+      "Latitude": 59.3293,
+      "Longitude": 18.0686
+    },
+    {
+      "Name": "Göteborg",
+      "X": 38,
+      "Y": 710,
+      "Latitude": 57.7089,
+      "Longitude": 11.9746
+    },
+    {
+      "Name": "Malmö",
+      "X": 77,
+      "Y": 842,
+      "Latitude": 55.605,
+      "Longitude": 13.0038
+    },
+    {
+      "Name": "Uppsala",
+      "X": 251,
+      "Y": 576,
+      "Latitude": 59.8586,
+      "Longitude": 17.6389
+    },
+    {
+      "Name": "Västerås",
+      "X": 210,
+      "Y": 591,
+      "Latitude": 59.6162,
+      "Longitude": 16.5528
+    },
+    {
+      "Name": "Örebro",
+      "X": 160,
+      "Y": 612,
+      "Latitude": 59.2753,
+      "Longitude": 15.2134
+    },
+    {
+      "Name": "Linköping",
+      "X": 175,
+      "Y": 666,
+      "Latitude": 58.4108,
+      "Longitude": 15.6214
+    },
+    {
+      "Name": "Helsingborg",
+      "X": 66,
+      "Y": 814,
+      "Latitude": 56.0465,
+      "Longitude": 12.6945
+    },
+    {
+      "Name": "Jönköping",
+      "X": 121,
+      "Y": 705,
+      "Latitude": 57.7826,
+      "Longitude": 14.1618
+    },
+    {
+      "Name": "Norrköping",
+      "X": 197,
+      "Y": 655,
+      "Latitude": 58.586,
+      "Longitude": 16.1924
+    },
+    {
+      "Name": "Umeå",
+      "X": 350,
+      "Y": 327,
+      "Latitude": 63.8258,
+      "Longitude": 20.263
+    },
+    {
+      "Name": "Gävle",
+      "X": 232,
+      "Y": 524,
+      "Latitude": 60.6749,
+      "Longitude": 17.1413
+    },
+    {
+      "Name": "Borås",
+      "X": 74,
+      "Y": 709,
+      "Latitude": 57.721,
+      "Longitude": 12.9401
+    },
+    {
+      "Name": "Eskilstuna",
+      "X": 208,
+      "Y": 606,
+      "Latitude": 59.3666,
+      "Longitude": 16.5077
+    },
+    {
+      "Name": "Södertälje",
+      "X": 251,
+      "Y": 617,
+      "Latitude": 59.1955,
+      "Longitude": 17.6254
+    },
+    {
+      "Name": "Karlstad",
+      "X": 96,
+      "Y": 605,
+      "Latitude": 59.3793,
+      "Longitude": 13.5036
+    },
+    {
+      "Name": "Karlskrona",
+      "X": 174,
+      "Y": 807,
+      "Latitude": 56.1616,
+      "Longitude": 15.5866
+    },
+    {
+      "Name": "Växjö",
+      "X": 145,
+      "Y": 762,
+      "Latitude": 56.879,
+      "Longitude": 14.8059
+    },
+    {
+      "Name": "Halmstad",
+      "X": 71,
+      "Y": 775,
+      "Latitude": 56.6745,
+      "Longitude": 12.857
+    },
+    {
+      "Name": "Sundsvall",
+      "X": 239,
+      "Y": 417,
+      "Latitude": 62.3908,
+      "Longitude": 17.3069
+    },
+    {
+      "Name": "Luleå",
+      "X": 421,
+      "Y": 217,
+      "Latitude": 65.5848,
+      "Longitude": 22.1547
+    },
+    {
+      "Name": "Trollhättan",
+      "X": 51,
+      "Y": 674,
+      "Latitude": 58.2836,
+      "Longitude": 12.2886
+    },
+    {
+      "Name": "Östersund",
+      "X": 138,
+      "Y": 368,
+      "Latitude": 63.1792,
+      "Longitude": 14.6357
+    },
+    {
+      "Name": "Borlänge",
+      "X": 169,
+      "Y": 536,
+      "Latitude": 60.4858,
+      "Longitude": 15.437
+    },
+    {
+      "Name": "Kiruna",
+      "X": 348,
+      "Y": 75,
+      "Latitude": 67.8558,
+      "Longitude": 20.2253
+    },
+    {
+      "Name": "Gällivare",
+      "X": 364,
+      "Y": 120,
+      "Latitude": 67.1337,
+      "Longitude": 20.6511
+    },
+    {
+      "Name": "Karesuando",
+      "X": 433,
+      "Y": 38,
+      "Latitude": 68.4419,
+      "Longitude": 22.4748
+    }
+  ],
   "Routes": [
     {
-      "Start": {
-        "Name": "Stockholm",
-        "X": 100,
-        "Y": 200,
-        "Latitude": 59.3293,
-        "Longitude": 18.0686
-      },
-      "Destination": {
-        "Name": "Göteborg",
-        "X": 300,
-        "Y": 400,
-        "Latitude": 57.7089,
-        "Longitude": 11.9746
-      },
+      "StartName": "Stockholm",
+      "DestinationName": "Göteborg",
       "DrivingDistance": 474,
       "StraightLineDistance": 402.0,
       "Cost": 4740
     },
     {
-      "Start": {
-        "Name": "Stockholm",
-        "X": 100,
-        "Y": 200,
-        "Latitude": 59.3293,
-        "Longitude": 18.0686
-      },
-      "Destination": {
-        "Name": "Malmö",
-        "X": 500,
-        "Y": 600,
-        "Latitude": 55.6050,
-        "Longitude": 13.0038
-      },
+      "StartName": "Stockholm",
+      "DestinationName": "Malmö",
       "DrivingDistance": 617,
       "StraightLineDistance": 472.0,
       "Cost": 6170
     },
     {
-      "Start": {
-        "Name": "Göteborg",
-        "X": 300,
-        "Y": 400,
-        "Latitude": 57.7089,
-        "Longitude": 11.9746
-      },
-      "Destination": {
-        "Name": "Malmö",
-        "X": 500,
-        "Y": 600,
-        "Latitude": 55.6050,
-        "Longitude": 13.0038
-      },
+      "StartName": "Göteborg",
+      "DestinationName": "Malmö",
       "DrivingDistance": 259,
       "StraightLineDistance": 211.0,
       "Cost": 2590
     },
     {
-      "Start": {
-        "Name": "Umeå",
-        "X": 700,
-        "Y": 800,
-        "Latitude": 63.8258,
-        "Longitude": 20.2630
-      },
-      "Destination": {
-        "Name": "Borås",
-        "X": 900,
-        "Y": 1000,
-        "Latitude": 57.7210,
-        "Longitude": 12.9401
-      },
+      "StartName": "Umeå",
+      "DestinationName": "Borås",
       "DrivingDistance": 603,
       "StraightLineDistance": 488.11,
       "Cost": 6030
+    },
+    {
+      "StartName": "Stockholm",
+      "DestinationName": "Umeå",
+      "DrivingDistance": 639,
+      "StraightLineDistance": 514.3,
+      "Cost": 6390
+    },
+    {
+      "StartName": "Uppsala",
+      "DestinationName": "Norrköping",
+      "DrivingDistance": 232,
+      "StraightLineDistance": 163.45,
+      "Cost": 2320
     }
-
   ]
 }

@@ -71,6 +71,28 @@ namespace LabShortestRouteFinder.View
         //    }
         //}
 
+        private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            var dataGrid = sender as DataGrid;
+
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                // Temporarily detach event handler to avoid recursion
+                dataGrid.RowEditEnding -= DataGrid_RowEditEnding;
+
+                try
+                {
+                    // Commit the edit to update the bound source
+                    dataGrid.CommitEdit(DataGridEditingUnit.Row, true);
+                }
+                finally
+                {
+                    // Reattach the event handler
+                    dataGrid.RowEditEnding += DataGrid_RowEditEnding;
+                }
+            }
+        }
+
 
 
         private void SaveRouteButton_Click(object sender, RoutedEventArgs e)

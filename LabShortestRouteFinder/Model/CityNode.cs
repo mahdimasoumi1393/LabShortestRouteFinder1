@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace LabShortestRouteFinder.Model
 {
@@ -12,6 +13,7 @@ namespace LabShortestRouteFinder.Model
         private string _name;
         private int _x;
         private int _y;
+        [JsonPropertyName("Name")]
         public required string Name
         {
             get => _name;
@@ -25,6 +27,7 @@ namespace LabShortestRouteFinder.Model
             }
         }
 
+        [JsonPropertyName("X")]
         public int X
         {
             get => _x;
@@ -38,6 +41,7 @@ namespace LabShortestRouteFinder.Model
             }
         }
 
+        [JsonPropertyName("Y")]
         public int Y
         {
             get => _y;
@@ -51,7 +55,10 @@ namespace LabShortestRouteFinder.Model
             }
         }
 
+        [JsonPropertyName("Latitude")]
         public double Latitude { get; set; }
+
+        [JsonPropertyName("Longitude")]
         public double Longitude { get; set; }
 
 

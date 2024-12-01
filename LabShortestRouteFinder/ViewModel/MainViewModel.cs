@@ -56,6 +56,7 @@ namespace LabShortestRouteFinder.ViewModel
             }
         }
 
+
         private void LoadRectangleAndCitiesFromJson()
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "swCities.json");
@@ -112,53 +113,11 @@ namespace LabShortestRouteFinder.ViewModel
             }
         }
 
-        //private void LoadRouteInformationFileFromJson()
-        //{
-        //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "routes.json");
-        //    if (!File.Exists(filePath))
-        //    {
-        //        throw new FileNotFoundException("routes.json file not found.", filePath);
-        //    }
 
-        //    var fileInfo = new FileInfo(filePath);
-        //    if ((fileInfo.Attributes & FileAttributes.ReadOnly) != 0)
-        //    {
-        //        throw new UnauthorizedAccessException("The routes.json file is read-only.");
-        //    }
-
-        //    if (File.Exists(filePath))
-        //    {
-        //        string jsonString = File.ReadAllText(filePath);
-        //        var jsonDocument = JsonDocument.Parse(jsonString);
-
-        //        var routes = JsonSerializer.Deserialize<List<Route>>(jsonDocument.RootElement.GetRawText());
-
-        //        if (routes != null && mapTransformer != null)
-        //        {
-        //            foreach (var route in routes)
-        //            {
-        //                (route.Start.X, route.Start.Y) = mapTransformer.TransformToScreenPosition(route.Start.Latitude, route.Start.Longitude);
-        //                (route.Destination.X, route.Destination.Y) = mapTransformer.TransformToScreenPosition(route.Destination.Latitude, route.Destination.Longitude);
-        //                Routes.Add(route);
-        //            }
-        //            // Debug statement to check routes count after loading
-        //            System.Diagnostics.Debug.WriteLine($"Routes Count After Loading: {Routes.Count}");
-
-        //        }
-        //        else
-        //        {
-        //            throw new InvalidOperationException("The routes could not be deserialized or the mapTransformer is null.");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        throw new FileNotFoundException($"The file {filePath} was not found.");
-        //    }
-        //}
-
+        
         private void LoadRouteInformationFileFromJson()
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "routes.json");
+            var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty, "Resources", "routes.json");
             if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException("routes.json file not found.", filePath);
@@ -201,79 +160,6 @@ namespace LabShortestRouteFinder.ViewModel
         }
 
 
-        //private void LoadRouteInformationFileFromJson()
-        //{
-        //    // Define the file path
-        //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Routes.json");
-
-        //    if (File.Exists(filePath))
-        //    {
-        //        try
-        //        {
-        //            // Read the JSON file
-        //            string jsonString = File.ReadAllText(filePath);
-
-        //            // Parse the JSON document
-        //            var jsonDocument = JsonDocument.Parse(jsonString);
-
-        //            // Deserialize the "Cities" property if it exists
-        //            if (jsonDocument.RootElement.TryGetProperty("Cities", out JsonElement citiesElement))
-        //            {
-        //                var citiesJson = citiesElement.GetRawText();
-        //                var cities = JsonSerializer.Deserialize<List<CityNode>>(citiesJson);
-
-        //                if (cities != null)
-        //                {
-        //                    this.Cities.Clear();
-        //                    foreach (var city in cities)
-        //                    {
-        //                        this.Cities.Add(city);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    throw new InvalidOperationException("The cities could not be deserialized.");
-        //                }
-        //            }
-
-        //            // Deserialize the "Routes" property if it exists
-        //            if (jsonDocument.RootElement.TryGetProperty("Routes", out JsonElement routesElement))
-        //            {
-        //                var routesJson = routesElement.GetRawText();
-        //                var routes = JsonSerializer.Deserialize<List<Route>>(routesJson);
-
-        //                if (routes != null && mapTransformer != null)
-        //                {
-        //                    this.Routes.Clear();
-        //                    foreach (var route in routes)
-        //                    {
-        //                        // Transform coordinates for the map
-        //                        (route.Start.X, route.Start.Y) = mapTransformer.TransformToScreenPosition(route.Start.Latitude, route.Start.Longitude);
-        //                        (route.Destination.X, route.Destination.Y) = mapTransformer.TransformToScreenPosition(route.Destination.Latitude, route.Destination.Longitude);
-        //                        this.Routes.Add(route);
-        //                    }
-
-        //                    // Debug statement to check the count of routes loaded
-        //                    System.Diagnostics.Debug.WriteLine($"Routes Count After Loading: {this.Routes.Count}");
-        //                }
-        //                else
-        //                {
-        //                    throw new InvalidOperationException("The routes could not be deserialized or the mapTransformer is null.");
-        //                }
-        //            }
-        //        }
-        //        catch (JsonException ex)
-        //        {
-        //            throw new InvalidOperationException("Error parsing the JSON file. Ensure the file is in the correct format.", ex);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        throw new FileNotFoundException($"The file {filePath} was not found.");
-        //    }
-        //}
-
-
 
         public void SaveRouteToJson(string filePath)
         {
@@ -285,7 +171,7 @@ namespace LabShortestRouteFinder.ViewModel
                     Directory.CreateDirectory(directoryPath);
                 }
 
-                filePath = Path.Combine(directoryPath, "Routes.json");
+                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty, "Resources", "routes.json");
 
                 System.Diagnostics.Debug.WriteLine($"Saving to: {filePath}");
 
@@ -301,9 +187,6 @@ namespace LabShortestRouteFinder.ViewModel
                         r.Cost
                     }).ToList()
                 };
-
-
-
                 var json = JsonConvert.SerializeObject(data, Formatting.Indented);
                 System.Diagnostics.Debug.WriteLine($"Serialized Data: {json}");
 

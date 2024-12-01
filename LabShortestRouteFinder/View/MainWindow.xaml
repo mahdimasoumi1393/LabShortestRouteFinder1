@@ -25,6 +25,7 @@
                 </Grid>
             </TabItem>
 
+
             <!-- Tab for Graph View -->
             <TabItem Header="Graph View" Name="GraphTab">
                 <view:GraphViewControl DataContext="{Binding GraphViewModel, RelativeSource={RelativeSource AncestorType=Window}}" />

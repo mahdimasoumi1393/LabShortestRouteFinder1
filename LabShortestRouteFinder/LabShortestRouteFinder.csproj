@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <None Update="Resources\routes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\swCities.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
