@@ -41,6 +41,7 @@ namespace LabShortestRouteFinder.View
 
             //DataContext = MainViewModel;
             //this.DataContext = RouteViewModel;
+            DataContext = new MainViewModel();
             this.DataContext = MainViewModel;
 
         }
@@ -71,27 +72,27 @@ namespace LabShortestRouteFinder.View
         //    }
         //}
 
-        private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
-        {
-            var dataGrid = sender as DataGrid;
+        //private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        //{
+        //    var dataGrid = sender as DataGrid;
 
-            if (e.EditAction == DataGridEditAction.Commit)
-            {
-                // Temporarily detach event handler to avoid recursion
-                dataGrid.RowEditEnding -= DataGrid_RowEditEnding;
+        //    if (e.EditAction == DataGridEditAction.Commit)
+        //    {
+        //        // Temporarily detach event handler to avoid recursion
+        //        dataGrid.RowEditEnding -= DataGrid_RowEditEnding;
 
-                try
-                {
-                    // Commit the edit to update the bound source
-                    dataGrid.CommitEdit(DataGridEditingUnit.Row, true);
-                }
-                finally
-                {
-                    // Reattach the event handler
-                    dataGrid.RowEditEnding += DataGrid_RowEditEnding;
-                }
-            }
-        }
+        //        try
+        //        {
+        //            // Commit the edit to update the bound source
+        //            dataGrid.CommitEdit(DataGridEditingUnit.Row, true);
+        //        }
+        //        finally
+        //        {
+        //            // Reattach the event handler
+        //            dataGrid.RowEditEnding += DataGrid_RowEditEnding;
+        //        }
+        //    }
+        //}
 
 
 
@@ -135,6 +136,85 @@ namespace LabShortestRouteFinder.View
             }
         }
 
+        //private void SaveRouteButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (MainViewModel == null)
+        //        {
+        //            MessageBox.Show("MainViewModel is not properly initialized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        //            return;
+        //        }
+
+        //        // Validate NewRoute
+        //        var newRoute = MainViewModel.NewRoute;
+        //        if (newRoute.Start == null || newRoute.Destination == null ||
+        //            newRoute.DrivingDistance <= 0 || newRoute.Cost <= 0)
+        //        {
+        //            MessageBox.Show("Invalid route details. Please complete all fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        //            return;
+        //        }
+
+        //        // Add NewRoute to Routes
+        //        MainViewModel.Routes.Add(new Route
+        //        {
+        //            Start = newRoute.Start,
+        //            Destination = newRoute.Destination,
+        //            DrivingDistance = newRoute.DrivingDistance,
+        //            StraightLineDistance = newRoute.StraightLineDistance,
+        //            Cost = newRoute.Cost
+        //        });
+
+        //        // Reset NewRoute for new input
+        //        MainViewModel.NewRoute = new Route
+        //        {
+        //            Start = null,
+        //            Destination = null
+        //        };
+
+        //        // Save all data to JSON
+        //        MainViewModel.SaveRouteToJson();
+        //        MessageBox.Show("Route added and saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"An error occurred while saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        //    }
+        //}
+
+
+
+
+
+        private void SaveCityButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Add the new city to the Cities collection
+                if (DataContext is MainViewModel viewModel)
+                {
+                    var newCity = new CityNode
+                    {
+                        Name = viewModel.NewCity.Name,
+                        Latitude = viewModel.NewCity.Latitude,
+                        Longitude = viewModel.NewCity.Longitude,
+                        X = 0, // Or calculate X and Y if needed
+                        Y = 0
+                    };
+                    viewModel.Cities.Add(newCity);
+
+                    // Save to JSON
+                    var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName ?? string.Empty, "Resources", "routes.json");
+                    MainViewModel.SaveCityNodeToJson(filePath);
+
+                    MessageBox.Show("City saved successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
 
     }
 }

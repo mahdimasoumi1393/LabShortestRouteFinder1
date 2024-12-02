@@ -21,14 +21,95 @@
             <TabItem Header="List View" Name="ListTab">
                 <Grid>
                     <view:ListViewControl DataContext="{Binding RouteViewModel, RelativeSource={RelativeSource AncestorType=Window}, PresentationTraceSources.TraceLevel=High}" />
-                    <Button Content="Save Route" Grid.Row="6" Grid.ColumnSpan="2" Width="150" Height="40" Margin="5" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SaveRouteButton_Click" />
+                    <Button Content="Save Route" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100"  Height="25" Click="SaveRouteButton_Click" />
                 </Grid>
             </TabItem>
 
 
+            <TabItem Header="Add City">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Name -->
+                    <TextBlock Text="City Name:" Margin="5" VerticalAlignment="Center" Grid.Row="0"/>
+                    <TextBox Margin="5" Grid.Row="0" HorizontalAlignment="Stretch" Width="200" Text="{Binding NewCity.Name, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Latitude -->
+                    <TextBlock Text="Latitude:" Margin="5" VerticalAlignment="Center" Grid.Row="1"/>
+                    <TextBox x:Name="LatitudeTextBox" Margin="5" Grid.Row="1" HorizontalAlignment="Stretch" Width="200" Text="{Binding NewCity.Latitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Longitude -->
+                    <TextBlock Text="Longitude:" Margin="5" VerticalAlignment="Center" Grid.Row="2"/>
+                    <TextBox x:Name="LongitudeTextBox" Margin="5" Grid.Row="2" HorizontalAlignment="Stretch" Width="200" Text="{Binding NewCity.Longitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Save Button -->
+                    <Button Content="Save City" Grid.Row="3" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100"  Height="25" Click="SaveCityButton_Click"/>
+                </Grid>
+            </TabItem>
+           
+
+
+            <!--<TabItem Header="Adding Route" Name="AddingTab">
+                <Grid>
+                    --><!-- Define rows and columns --><!--
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    --><!-- Input fields --><!--
+                    <TextBlock Text="Start:" Grid.Row="0" Grid.Column="0" Margin="5" />
+                    <ComboBox Name="StartComboBox" Grid.Row="0" Grid.Column="1" Margin="5"
+                  ItemsSource="{Binding Cities}" 
+                  SelectedItem="{Binding NewRoute.Start, Mode=TwoWay}" 
+                  DisplayMemberPath="Name" />
+
+                    <TextBlock Text="Destination:" Grid.Row="1" Grid.Column="0" Margin="5" />
+                    <ComboBox Name="DestinationComboBox" Grid.Row="1" Grid.Column="1" Margin="5"
+                  ItemsSource="{Binding Cities}" 
+                  SelectedItem="{Binding NewRoute.Destination, Mode=TwoWay}" 
+                  DisplayMemberPath="Name" />
+
+                    <TextBlock Text="Driving Distance:" Grid.Row="2" Grid.Column="0" Margin="5" />
+                    <TextBox Name="DrivingDistanceTextBox" Grid.Row="2" Grid.Column="1" Margin="5" 
+                 Text="{Binding NewRoute.DrivingDistance, Mode=TwoWay}" />
+
+                    <TextBlock Text="Straight Line Distance:" Grid.Row="3" Grid.Column="0" Margin="5" />
+                    <TextBox Name="StraightLineDistanceTextBox" Grid.Row="3" Grid.Column="1" Margin="5" 
+                 Text="{Binding NewRoute.StraightLineDistance, Mode=TwoWay}" />
+
+                    <TextBlock Text="Cost:" Grid.Row="4" Grid.Column="0" Margin="5" />
+                    <TextBox Name="CostTextBox" Grid.Row="4" Grid.Column="1" Margin="5" 
+                 Text="{Binding NewRoute.Cost, Mode=TwoWay}" />
+
+                    --><!-- Save button --><!--
+                    <Button Content="Save Route" Grid.Row="5" Margin="20" 
+                HorizontalAlignment="Right" Width="100"  Height="25" Click="SaveRouteButton_Click" />
+                </Grid>
+            </TabItem>-->
+
+
+
             <!-- Tab for Graph View -->
             <TabItem Header="Graph View" Name="GraphTab">
-                <view:GraphViewControl DataContext="{Binding GraphViewModel, RelativeSource={RelativeSource AncestorType=Window}}" />
+                <Grid>
+                    <Canvas Name="MyCanvas" Background="LightPink" Height="auto" Width="auto"/>
+                    <view:GraphViewControl DataContext="{Binding GraphViewModel, RelativeSource={RelativeSource AncestorType=Window}}" Height="auto" Width="auto"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </DockPanel>
