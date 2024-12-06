@@ -32,9 +32,23 @@
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
                             <ComboBox 
-                            ItemsSource="{Binding DataContext.Cities, RelativeSource={RelativeSource AncestorType=Window}}" 
-                            SelectedItem="{Binding Destination, Mode=TwoWay}" 
-                            DisplayMemberPath="Name" />
+            ItemsSource="{Binding DataContext.Cities, RelativeSource={RelativeSource AncestorType=Window}}" 
+            SelectedItem="{Binding Destination, Mode=TwoWay}" 
+            DisplayMemberPath="Name" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- ComboBox for Waypoint -->
+                <DataGridTemplateColumn Header="Waypoint">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Waypoint.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding DataContext.Cities, RelativeSource={RelativeSource AncestorType=Window}}" SelectedItem="{Binding Waypoint, Mode=TwoWay}" DisplayMemberPath="Name" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>

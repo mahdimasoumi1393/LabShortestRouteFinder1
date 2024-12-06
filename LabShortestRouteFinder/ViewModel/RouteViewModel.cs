@@ -8,7 +8,7 @@ namespace LabShortestRouteFinder.ViewModel
     {
 
 
-        public ObservableCollection<Route> _routes { get; set; }
+        private ObservableCollection<Route> _routes { get; set; }
         public ObservableCollection<Route> Routes
         {
             get

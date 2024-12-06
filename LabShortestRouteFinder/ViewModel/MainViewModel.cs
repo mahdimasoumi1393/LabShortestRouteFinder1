@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;
 using JsonException = Newtonsoft.Json.JsonException;
@@ -19,8 +21,36 @@ namespace LabShortestRouteFinder.ViewModel
 
         public ObservableCollection<CityNode> Cities { get; set; } = new ObservableCollection<CityNode>();
 
-        public Route NewRoute { get; set; }
-        //public ObservableCollection<CityNode> Cities { get; set; }
+
+
+        private CityNode _start;
+        private CityNode _destination;
+
+        public CityNode Start
+        {
+            get => _start;
+            set
+            {
+                if (_start != value)
+                {
+                    _start = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public CityNode Destination
+        {
+            get => _destination;
+            set
+            {
+                if (_destination != value)
+                {
+                    _destination = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public ObservableCollection<Route> Routes { get; set; }
         
 
@@ -41,8 +71,10 @@ namespace LabShortestRouteFinder.ViewModel
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName) =>
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         private void NormalizeCoordinates()
         {
@@ -185,10 +217,9 @@ namespace LabShortestRouteFinder.ViewModel
 
                 var data = new
                 {
-                    //Cities = this.Cities.Select(c => new { c.Name, c.X, c.Y, c.Latitude, c.Longitude }).ToList(),
                     Routes = this.Routes.Select(r => new
                     {
-                        Start = new
+                        Start = r.Start == null ? null : new
                         {
                             r.Start.Name,
                             r.Start.X,
@@ -196,7 +227,7 @@ namespace LabShortestRouteFinder.ViewModel
                             r.Start.Latitude,
                             r.Start.Longitude
                         },
-                        Destination = new
+                        Destination = r.Destination == null ? null : new
                         {
                             r.Destination.Name,
                             r.Destination.X,
@@ -204,11 +235,20 @@ namespace LabShortestRouteFinder.ViewModel
                             r.Destination.Latitude,
                             r.Destination.Longitude
                         },
+                        Waypoint = r.Waypoint == null ? null : new
+                        {
+                            r.Waypoint.Name,
+                            r.Waypoint.X,
+                            r.Waypoint.Y,
+                            r.Waypoint.Latitude,
+                            r.Waypoint.Longitude
+                        },
                         r.DrivingDistance,
                         r.StraightLineDistance,
                         r.Cost
                     }).ToList()
                 };
+
                 var json = JsonConvert.SerializeObject(data, Formatting.Indented);
                 System.Diagnostics.Debug.WriteLine($"Serialized Data: {json}");
 
@@ -225,104 +265,14 @@ namespace LabShortestRouteFinder.ViewModel
         }
 
 
-        //public void SaveRouteToJson(string filePath = null)
-        //{
-        //    try
-        //    {
-        //        // Explicitly set the directory and file path
-        //        var directoryPath = Path.Combine("C:\\Users\\mahdi\\Desktop\\Version1\\LabShortestRouteFinder\\Resources");
-        //        if (!Directory.Exists(directoryPath))
-        //        {
-        //            Directory.CreateDirectory(directoryPath);
-        //        }
-
-        //        filePath ??= Path.Combine(directoryPath, "routes.json");
-        //        System.Diagnostics.Debug.WriteLine($"Saving to: {filePath}");
-
-        //        // Validate that Cities and Routes collections are initialized and contain data
-        //        if (Cities == null || !Cities.Any())
-        //        {
-        //            System.Diagnostics.Debug.WriteLine("No cities to save. Ensure the Cities collection is populated.");
-        //            throw new InvalidOperationException("Cities collection is empty or null.");
-        //        }
-
-        //        if (Routes == null || !Routes.Any())
-        //        {
-        //            System.Diagnostics.Debug.WriteLine("No routes to save. Ensure the Routes collection is populated.");
-        //            throw new InvalidOperationException("Routes collection is empty or null.");
-        //        }
-
-        //        // Log each route for validation
-        //        foreach (var route in Routes)
-        //        {
-        //            System.Diagnostics.Debug.WriteLine($"Route: Start={route.Start?.Name ?? "null"}, Destination={route.Destination?.Name ?? "null"}, DrivingDistance={route.DrivingDistance}, StraightLineDistance={route.StraightLineDistance}, Cost={route.Cost}");
-        //            if (route.Start == null || route.Destination == null)
-        //            {
-        //                throw new InvalidOperationException("One or more routes have null Start or Destination.");
-        //            }
-        //        }
-
-        //        // Prepare data for serialization
-        //        var data = new
-        //        {
-        //            Cities = Cities.Select(c => new
-        //            {
-        //                c.Name,
-        //                c.X,
-        //                c.Y,
-        //                c.Latitude,
-        //                c.Longitude
-        //            }).ToList(),
-        //            Routes = Routes.Select(r => new
-        //            {
-        //                Start = new
-        //                {
-        //                    r.Start.Name,
-        //                    r.Start.X,
-        //                    r.Start.Y,
-        //                    r.Start.Latitude,
-        //                    r.Start.Longitude
-        //                },
-        //                Destination = new
-        //                {
-        //                    r.Destination.Name,
-        //                    r.Destination.X,
-        //                    r.Destination.Y,
-        //                    r.Destination.Latitude,
-        //                    r.Destination.Longitude
-        //                },
-        //                r.DrivingDistance,
-        //                r.StraightLineDistance,
-        //                r.Cost
-        //            }).ToList()
-        //        };
-
-        //        // Serialize to JSON
-        //        var json = JsonConvert.SerializeObject(data, Formatting.Indented);
-
-        //        // Write JSON to file
-        //        File.WriteAllText(filePath, json);
-        //        File.SetLastWriteTime(filePath, DateTime.Now);
-
-        //        System.Diagnostics.Debug.WriteLine("Data successfully saved.");
-        //    }
-        //    catch (InvalidOperationException ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine($"Validation error: {ex.Message}");
-        //        throw;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine($"Error saving data: {ex.Message}");
-        //        throw;
-        //    }
-        //}
-
-
         public void SaveCityNodeToJson(string filePath)
         {
             try
             {
+
+                // Normalize coordinates before saving
+                //NormalizeCoordinates();
+
                 // Ensure the directory exists
                 var directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Resources");
                 if (!Directory.Exists(directoryPath))
@@ -383,9 +333,6 @@ namespace LabShortestRouteFinder.ViewModel
                 System.Diagnostics.Debug.WriteLine($"Error saving data: {ex.Message}");
             }
         }
-
-
-
 
         private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {

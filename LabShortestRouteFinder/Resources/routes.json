@@ -4,35 +4,75 @@
       "Start": {
         "Name": "Stockholm",
         "X": 267,
-        "Y": 608,
+        "Y": 600,
         "Latitude": 59.3293,
         "Longitude": 18.0686
       },
       "Destination": {
         "Name": "Göteborg",
         "X": 38,
-        "Y": 710,
+        "Y": 701,
         "Latitude": 57.7089,
         "Longitude": 11.9746
       },
-      "DrivingDistance": 474,
+      "Waypoint": {
+        "Name": "Jönköping",
+        "X": 121,
+        "Y": 705,
+        "Latitude": 57.7826,
+        "Longitude": 14.1618
+      },
+      "DrivingDistance": 470,
       "StraightLineDistance": 402.0,
-      "Cost": 4740
+      "Cost": 4700
     },
     {
       "Start": {
         "Name": "Stockholm",
         "X": 267,
-        "Y": 608,
+        "Y": 600,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Göteborg",
+        "X": 38,
+        "Y": 701,
+        "Latitude": 57.7089,
+        "Longitude": 11.9746
+      },
+      "Waypoint": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 612,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "DrivingDistance": 480,
+      "StraightLineDistance": 402.0,
+      "Cost": 4800
+    },
+    {
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 600,
         "Latitude": 59.3293,
         "Longitude": 18.0686
       },
       "Destination": {
         "Name": "Malmö",
         "X": 77,
-        "Y": 842,
+        "Y": 830,
         "Latitude": 55.605,
         "Longitude": 13.0038
+      },
+      "Waypoint": {
+        "Name": "Jönköping",
+        "X": 121,
+        "Y": 705,
+        "Latitude": 57.7826,
+        "Longitude": 14.1618
       },
       "DrivingDistance": 617,
       "StraightLineDistance": 472.0,
@@ -42,16 +82,23 @@
       "Start": {
         "Name": "Göteborg",
         "X": 38,
-        "Y": 710,
+        "Y": 701,
         "Latitude": 57.7089,
         "Longitude": 11.9746
       },
       "Destination": {
         "Name": "Malmö",
         "X": 77,
-        "Y": 842,
+        "Y": 830,
         "Latitude": 55.605,
         "Longitude": 13.0038
+      },
+      "Waypoint": {
+        "Name": "Helsingborg",
+        "X": 66,
+        "Y": 814,
+        "Latitude": 56.0465,
+        "Longitude": 12.6945
       },
       "DrivingDistance": 259,
       "StraightLineDistance": 211.0,
@@ -61,35 +108,75 @@
       "Start": {
         "Name": "Umeå",
         "X": 350,
-        "Y": 327,
+        "Y": 323,
         "Latitude": 63.8258,
         "Longitude": 20.263
       },
       "Destination": {
         "Name": "Borås",
         "X": 74,
-        "Y": 709,
+        "Y": 700,
         "Latitude": 57.721,
         "Longitude": 12.9401
       },
-      "DrivingDistance": 603,
-      "StraightLineDistance": 488.11,
-      "Cost": 6030
-    },
-    {
-      "Start": {
+      "Waypoint": {
         "Name": "Stockholm",
         "X": 267,
         "Y": 608,
         "Latitude": 59.3293,
         "Longitude": 18.0686
       },
+      "DrivingDistance": 1040,
+      "StraightLineDistance": 786.4,
+      "Cost": 10400
+    },
+    {
+      "Start": {
+        "Name": "Umeå",
+        "X": 350,
+        "Y": 323,
+        "Latitude": 63.8258,
+        "Longitude": 20.263
+      },
+      "Destination": {
+        "Name": "Borås",
+        "X": 74,
+        "Y": 700,
+        "Latitude": 57.721,
+        "Longitude": 12.9401
+      },
+      "Waypoint": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 604,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "DrivingDistance": 960,
+      "StraightLineDistance": 786.4,
+      "Cost": 9600
+    },
+    {
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 600,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
       "Destination": {
         "Name": "Umeå",
         "X": 350,
-        "Y": 327,
+        "Y": 323,
         "Latitude": 63.8258,
         "Longitude": 20.263
+      },
+      "Waypoint": {
+        "Name": "Sundsvall",
+        "X": 239,
+        "Y": 417,
+        "Latitude": 62.3908,
+        "Longitude": 17.3069
       },
       "DrivingDistance": 639,
       "StraightLineDistance": 514.2,
@@ -99,16 +186,23 @@
       "Start": {
         "Name": "Uppsala",
         "X": 251,
-        "Y": 576,
+        "Y": 568,
         "Latitude": 59.8586,
         "Longitude": 17.6389
       },
       "Destination": {
         "Name": "Norrköping",
         "X": 197,
-        "Y": 655,
+        "Y": 646,
         "Latitude": 58.586,
         "Longitude": 16.1924
+      },
+      "Waypoint": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 608,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
       },
       "DrivingDistance": 232,
       "StraightLineDistance": 163.45,
@@ -118,16 +212,23 @@
       "Start": {
         "Name": "Stockholm",
         "X": 267,
-        "Y": 608,
+        "Y": 600,
         "Latitude": 59.3293,
         "Longitude": 18.0686
       },
       "Destination": {
         "Name": "Helsingborg",
         "X": 66,
-        "Y": 814,
+        "Y": 803,
         "Latitude": 56.0465,
         "Longitude": 12.6945
+      },
+      "Waypoint": {
+        "Name": "Linköping",
+        "X": 175,
+        "Y": 666,
+        "Latitude": 58.4108,
+        "Longitude": 15.6214
       },
       "DrivingDistance": 554,
       "StraightLineDistance": 484.88,
@@ -137,20 +238,157 @@
       "Start": {
         "Name": "Uppsala",
         "X": 251,
-        "Y": 576,
+        "Y": 568,
         "Latitude": 59.8586,
         "Longitude": 17.6389
       },
       "Destination": {
         "Name": "Östersund",
         "X": 138,
-        "Y": 368,
+        "Y": 363,
         "Latitude": 63.1792,
         "Longitude": 14.6357
+      },
+      "Waypoint": {
+        "Name": "Sundsvall",
+        "X": 239,
+        "Y": 417,
+        "Latitude": 62.3908,
+        "Longitude": 17.3069
       },
       "DrivingDistance": 492,
       "StraightLineDistance": 402.46,
       "Cost": 4920
+    },
+    {
+      "Start": {
+        "Name": "Uppsala",
+        "X": 251,
+        "Y": 568,
+        "Latitude": 59.8586,
+        "Longitude": 17.6389
+      },
+      "Destination": {
+        "Name": "Östersund",
+        "X": 138,
+        "Y": 363,
+        "Latitude": 63.1792,
+        "Longitude": 14.6357
+      },
+      "Waypoint": {
+        "Name": "Borlänge",
+        "X": 169,
+        "Y": 529,
+        "Latitude": 60.4858,
+        "Longitude": 15.437
+      },
+      "DrivingDistance": 532,
+      "StraightLineDistance": 402.46,
+      "Cost": 5320
+    },
+    {
+      "Start": {
+        "Name": "Uppsala",
+        "X": 251,
+        "Y": 568,
+        "Latitude": 59.8586,
+        "Longitude": 17.6389
+      },
+      "Destination": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 604,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "Waypoint": {
+        "Name": "Västerås",
+        "X": 210,
+        "Y": 591,
+        "Latitude": 59.6162,
+        "Longitude": 16.5528
+      },
+      "DrivingDistance": 171,
+      "StraightLineDistance": 151.32,
+      "Cost": 1710
+    },
+    {
+      "Start": {
+        "Name": "Uppsala",
+        "X": 251,
+        "Y": 568,
+        "Latitude": 59.8586,
+        "Longitude": 17.6389
+      },
+      "Destination": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 604,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "Waypoint": {
+        "Name": "Eskilstuna",
+        "X": 208,
+        "Y": 606,
+        "Latitude": 59.3666,
+        "Longitude": 16.5077
+      },
+      "DrivingDistance": 196,
+      "StraightLineDistance": 151.32,
+      "Cost": 1960
+    },
+    {
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 600,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 604,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "Waypoint": {
+        "Name": "Västerås",
+        "X": 210,
+        "Y": 591,
+        "Latitude": 59.6162,
+        "Longitude": 16.5528
+      },
+      "DrivingDistance": 199,
+      "StraightLineDistance": 162.4,
+      "Cost": 1990
+    },
+    {
+      "Start": {
+        "Name": "Stockholm",
+        "X": 267,
+        "Y": 600,
+        "Latitude": 59.3293,
+        "Longitude": 18.0686
+      },
+      "Destination": {
+        "Name": "Örebro",
+        "X": 160,
+        "Y": 604,
+        "Latitude": 59.2753,
+        "Longitude": 15.2134
+      },
+      "Waypoint": {
+        "Name": "Eskilstuna",
+        "X": 208,
+        "Y": 606,
+        "Latitude": 59.3666,
+        "Longitude": 16.5077
+      },
+      "DrivingDistance": 198,
+      "StraightLineDistance": 162.4,
+      "Cost": 1980
     }
   ]
 }

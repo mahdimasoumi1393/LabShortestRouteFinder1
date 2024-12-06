@@ -12,26 +12,33 @@
     </UserControl.Resources>
 
     <Canvas Width="433" Height="842">
-        <!-- Draw routes between nodes -->
-        <ItemsControl ItemsSource="{Binding Routes}">
+        <!-- Draw FastestRoute -->
+        <ItemsControl ItemsSource="{Binding FastestRoutes}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Canvas>
-                        <!-- Route as a line -->
-                        <Line X1="{Binding Start.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
-                              Y1="{Binding Start.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
-                              X2="{Binding Destination.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
-                              Y2="{Binding Destination.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
-                              StrokeThickness="2">
-                            <Line.Stroke>
-                                <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-                                    <RadialGradientBrush.GradientStops>
-                                        <GradientStop Color="Red" Offset="0" />
-                                        <GradientStop Color="Blue" Offset="0.25" />
-                                    </RadialGradientBrush.GradientStops>
-                                </RadialGradientBrush>
-                            </Line.Stroke>
-                        </Line>
+                        <Line X1="{Binding Start.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y1="{Binding Start.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
+                          X2="{Binding Waypoint.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y2="{Binding Waypoint.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
+                          Stroke="Green" StrokeThickness="3" />
+                        <Line X1="{Binding Waypoint.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y1="{Binding Waypoint.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
+                          X2="{Binding Destination.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y2="{Binding Destination.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
+                          Stroke="Green" StrokeThickness="3" />
+                    </Canvas>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- Draw NonFastRoute -->
+        <ItemsControl ItemsSource="{Binding NonFastRoutes}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Canvas>
+                        <Line X1="{Binding Start.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y1="{Binding Start.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
+                          X2="{Binding Waypoint.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y2="{Binding Waypoint.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
+                          Stroke="Red" StrokeThickness="3" />
+                        <Line X1="{Binding Waypoint.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y1="{Binding Waypoint.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" 
+                          X2="{Binding Destination.X, Converter={StaticResource OffsetConverter}, ConverterParameter=7}" Y2="{Binding Destination.Y, Converter={StaticResource OffsetConverter}, ConverterParameter=7}"
+                          Stroke="Red" StrokeThickness="3" />
                     </Canvas>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

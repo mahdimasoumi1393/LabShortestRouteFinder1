@@ -21,91 +21,91 @@
     "Cities": [
       {
         "Name": "Stockholm",
-        "X": 100,
+        "X": 99,
         "Y": 200,
         "Latitude": 59.3293,
         "Longitude": 18.0686
       },
       {
         "Name": "Göteborg",
-        "X": 15,
+        "X": 14,
         "Y": 233,
         "Latitude": 57.7089,
         "Longitude": 11.9746
       },
       {
         "Name": "Malmö",
-        "X": 29,
-        "Y": 277,
+        "X": 28,
+        "Y": 276,
         "Latitude": 55.605,
         "Longitude": 13.0038
       },
       {
         "Name": "Uppsala",
-        "X": 94,
+        "X": 93,
         "Y": 189,
         "Latitude": 59.8586,
         "Longitude": 17.6389
       },
       {
         "Name": "Västerås",
-        "X": 79,
+        "X": 78,
         "Y": 194,
         "Latitude": 59.6162,
         "Longitude": 16.5528
       },
       {
         "Name": "Örebro",
-        "X": 60,
+        "X": 59,
         "Y": 201,
         "Latitude": 59.2753,
         "Longitude": 15.2134
       },
       {
         "Name": "Linköping",
-        "X": 66,
-        "Y": 219,
+        "X": 65,
+        "Y": 218,
         "Latitude": 58.4108,
         "Longitude": 15.6214
       },
       {
         "Name": "Helsingborg",
-        "X": 25,
-        "Y": 268,
+        "X": 24,
+        "Y": 267,
         "Latitude": 56.0465,
         "Longitude": 12.6945
       },
       {
         "Name": "Jönköping",
         "X": 45,
-        "Y": 232,
+        "Y": 231,
         "Latitude": 57.7826,
         "Longitude": 14.1618
       },
       {
         "Name": "Norrköping",
-        "X": 74,
+        "X": 73,
         "Y": 215,
         "Latitude": 58.586,
         "Longitude": 16.1924
       },
       {
         "Name": "Lund",
-        "X": 32,
-        "Y": 275,
+        "X": 31,
+        "Y": 274,
         "Latitude": 55.7047,
         "Longitude": 13.191
       },
       {
         "Name": "Umeå",
-        "X": 131,
-        "Y": 108,
+        "X": 130,
+        "Y": 107,
         "Latitude": 63.8258,
         "Longitude": 20.263
       },
       {
         "Name": "Gävle",
-        "X": 87,
+        "X": 86,
         "Y": 172,
         "Latitude": 60.6749,
         "Longitude": 17.1413
@@ -119,21 +119,21 @@
       },
       {
         "Name": "Eskilstuna",
-        "X": 78,
+        "X": 77,
         "Y": 199,
         "Latitude": 59.3666,
         "Longitude": 16.5077
       },
       {
         "Name": "Södertälje",
-        "X": 94,
-        "Y": 203,
+        "X": 93,
+        "Y": 202,
         "Latitude": 59.1955,
         "Longitude": 17.6254
       },
       {
         "Name": "Karlstad",
-        "X": 36,
+        "X": 35,
         "Y": 199,
         "Latitude": 59.3793,
         "Longitude": 13.5036
@@ -154,8 +154,8 @@
       },
       {
         "Name": "Halmstad",
-        "X": 27,
-        "Y": 255,
+        "X": 26,
+        "Y": 254,
         "Latitude": 56.6745,
         "Longitude": 12.857
       },
@@ -168,22 +168,22 @@
       },
       {
         "Name": "Luleå",
-        "X": 157,
+        "X": 156,
         "Y": 71,
         "Latitude": 65.5848,
         "Longitude": 22.1547
       },
       {
         "Name": "Trollhättan",
-        "X": 19,
-        "Y": 222,
+        "X": 18,
+        "Y": 221,
         "Latitude": 58.2836,
         "Longitude": 12.2886
       },
       {
         "Name": "Östersund",
-        "X": 52,
-        "Y": 121,
+        "X": 51,
+        "Y": 120,
         "Latitude": 63.1792,
         "Longitude": 14.6357
       },
@@ -196,24 +196,45 @@
       },
       {
         "Name": "Kiruna",
-        "X": 130,
-        "Y": 25,
+        "X": 129,
+        "Y": 24,
         "Latitude": 67.8558,
         "Longitude": 20.2253
       },
       {
         "Name": "Gällivare",
-        "X": 136,
-        "Y": 40,
+        "X": 135,
+        "Y": 39,
         "Latitude": 67.1337,
         "Longitude": 20.6511
       },
       {
         "Name": "Karesuando",
         "X": 161,
-        "Y": 13,
+        "Y": 12,
         "Latitude": 68.4419,
         "Longitude": 22.4748
+      },
+      {
+        "Name": "Kalmar",
+        "X": 76,
+        "Y": 254,
+        "Latitude": 56.6628826,
+        "Longitude": 16.3662382
+      },
+      {
+        "Name": "Mora",
+        "X": 50,
+        "Y": 165,
+        "Latitude": 61.0086787,
+        "Longitude": 14.5442519
+      },
+      {
+        "Name": "Ystad",
+        "X": 40,
+        "Y": 280,
+        "Latitude": 55.4295203,
+        "Longitude": 13.8201171
       }
     ]
   }
