@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Text.Json;
+using System.Windows;
 
 namespace LabShortestRouteFinder.ViewModel
 {
@@ -61,6 +62,7 @@ namespace LabShortestRouteFinder.ViewModel
 
         public void FindShortestAndLongestRoutes(CityNode start, CityNode destination)
         {
+            // Find all matching routes between the start and destination cities
             var matchedRoutes = Routes
                 .Where(r => r.Start.Name == start.Name && r.Destination.Name == destination.Name)
                 .ToList();
@@ -72,23 +74,50 @@ namespace LabShortestRouteFinder.ViewModel
                 System.Diagnostics.Debug.WriteLine($"Route Start: {route.Start.Name}, Destination: {route.Destination.Name}, DrivingDistance: {route.DrivingDistance}");
             }
 
-            if (matchedRoutes.Count >= 2)
+            if (matchedRoutes.Any())
             {
+                // Sort the routes by DrivingDistance in ascending order
                 var sortedRoutes = matchedRoutes.OrderBy(r => r.DrivingDistance).ToList();
-                FastestRoutes.Clear();
-                FastestRoutes.Add(sortedRoutes[0]);
 
+                // Clear and update FastestRoutes and NonFastRoutes
+                FastestRoutes.Clear();
                 NonFastRoutes.Clear();
-                NonFastRoutes.Add(sortedRoutes[1]);
+
+                // Add the route with the lowest DrivingDistance to FastestRoutes
+                FastestRoutes.Add(sortedRoutes[0]);
+                NormalizeCoordinatesForRoutes(FastestRoutes);
+
+                // Add all other routes to NonFastRoutes
+                for (int i = 1; i < sortedRoutes.Count; i++)
+                {
+                    NonFastRoutes.Add(sortedRoutes[i]);
+                }
+                NormalizeCoordinatesForRoutes(NonFastRoutes);
             }
             else
             {
+                // Clear both lists if no routes are found
                 FastestRoutes.Clear();
                 NonFastRoutes.Clear();
-                System.Diagnostics.Debug.WriteLine("Not enough routes found for comparison.");
+                System.Diagnostics.Debug.WriteLine("No routes found for the specified start and destination cities.");
+
+                // Show message box to inform the user
+                MessageBox.Show("No routes found between those cities!", "No Routes Found", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+        private void NormalizeCoordinatesForRoutes(IEnumerable<Route> routes)
+        {
+            int maxX = Cities.Max(c => c.X);
+            int maxY = Cities.Max(c => c.Y);
 
+            foreach (var route in routes)
+            {
+                route.Start.X = (route.Start.X * 433) / maxX; // Normalize to Canvas width
+                route.Start.Y = (route.Start.Y * 842) / maxY; // Normalize to Canvas height
+                route.Destination.X = (route.Destination.X * 433) / maxX; // Normalize to Canvas width
+                route.Destination.Y = (route.Destination.Y * 842) / maxY; // Normalize to Canvas height
+            }
+        }
 
     }
 }
