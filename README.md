@@ -1,15 +1,17 @@
-# Version1
-I den här versionen har jag lagt en ny knapp under listan för att addera nya rutts. Rtterna sparas på json filen men jag hade problem i min Visual Studio och kunde se någon uppdatering, men När jag öpnade filen i file eXplorer med en text VS Code och NotePad, såg jag att rutterna har lagts till. 
-Jag har lagt till en ny column i listan cost och ändrade properties så att de kan ta emot nya värden(set). Sedan en ny method har lagts till för att spara rutter(SaveRoutesToJson) och knapp funktion. 
+# Version 1
+I den här versionen har jag lagt till en ny knapp under listan för att addera nya rutter. Rutterna sparas i JSON-filen, men jag hade problem i Visual Studio och kunde inte se några uppdateringar. När jag däremot öppnade filen i File Explorer med en texteditor som VS Code eller Notepad såg jag att rutterna hade lagts till.
+Jag har också lagt till en ny kolumn i listan, Cost, och ändrat egenskaperna så att de kan ta emot nya värden (set). En ny metod har lagts till för att spara rutter (SaveRoutesToJson) och en knappfunktion har implementerats.
 
-# Version2 
-Sedan addderade jag en ny tab item flr att addera nya städer med namn och longitude och litatude. I methoden SaveCityNodeToJson, med hjälp av metoden TransformToScreenPosition (Converters) räknas X och Y.
+# Version 2
+Jag lade till en ny flik (Tab Item) för att addera nya städer med namn samt longitud och latitud. I metoden SaveCityNodeToJson används metoden TransformToScreenPosition (Converters) för att räkna ut X- och Y-koordinater.
 
-# Version3
-Ändarade klassen Route och adderade nullable Waypoint. Skapade en två conboboxar för nya RouteObject Fastest och Nonfast, vilket fungrade inte i graphen, däremot ändrade jag dem till ObservableCollection och då fungerade inte. Fastest Route visas med grön och NonFast Route visas med röd. här man kan hitta mellan två routes
+# Version 3
+Jag ändrade klassen Route och lade till en nullable Waypoint. Två comboboxar skapades för nya RouteObjects: Fastest och NonFast. Dessa fungerade först inte i grafen, men när jag ändrade dem till ObservableCollection började de fungera.
+Fastest Route visas med gröna linjer och NonFast Route visas med röda linjer. Här kan användaren hitta en rutt mellan två punkter.
 
-# EndVersion
-Finjusterade koden för att ha flera routes mellan Start och Destionation via olika Waypoints och hitta fastest route mellan dem. Om användaren söker en route som inte finns i json-filen då får en messagebox att ingen route mellan de städerna.
+# Slutversion
+Jag finjusterade koden för att hantera flera rutter mellan Start och Destination via olika Waypoints och för att hitta den snabbaste rutten mellan dem.
+Fastest Route har bara en rutt som visas med en grön linje, medan NonFast Route kan bestå av flera objekt som visas med röda linjer i grafen. Om användaren söker en rutt som inte finns i JSON-filen visas ett meddelande i en MessageBox som anger att det inte finns någon rutt mellan de valda städerna.
 
 ## Kommentarer, Version 1
 1. Bra gjort, Jag ser att du sparar dina json filer på kopiorna som finns under ..LabShortestRouteFinder\bin\Debug\net8.0-windows\Resources\
