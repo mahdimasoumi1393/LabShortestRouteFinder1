@@ -22,4 +22,8 @@ Det är Ok, så länge du är medveten om att nästa gång du bygger programmet,
 2. Du har kvar hitta snabbaste vägen.  
 Du kan göra det enkel, genom att lägga två textboxar, "Från" - "Till" och en kanpp för att starta algoritmen som vi har gått igenom tidigare.
 /Alejandro
-   
+
+## Kommentarer, Slutversion.
+Bra jobbat, du har klarat fint kraven för Godkänt. Jag sätter betyget på Omniway.
+Lycka till i fortsättning
+/Alejandro
